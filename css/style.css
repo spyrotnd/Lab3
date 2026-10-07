@@ -1,0 +1,177 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+header {
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+.page-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    background-color: #ddd;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    width: 100%;
+}
+
+
+
+
+.bio-hero {
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.bio-hero h1 {
+    margin-bottom: 15px;
+}
+
+
+
+.card-grid {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 20px;
+    gap: 20px;
+}
+
+
+
+.card {
+    flex-basis: 100%;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    /* Hover animation */
+    transition: box-shadow 0.3s ease,
+                transform 0.3s ease;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+
+
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    transform: translateY(-3px);
+}
+
+
+
+
+footer {
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #222;
+    color: white;
+}
+
+
+
+
+@media (min-width: 768px) {
+
+    /* make this horizontal*/
+
+    .page-layout {
+        flex-direction: row;
+    }
+
+
+
+    nav {
+        order: 1;
+        flex-basis: 220px;
+        flex-shrink: 0;
+        padding: 30px 20px;
+        justify-content: flex-start;
+    }
+
+
+
+    main {
+        order: 2;
+        flex: 1;
+    }
+
+
+
+    .card-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+
+
+    .card:first-child {
+        flex-basis: 100%;
+    }
+
+    /* all this means is that i want the .card class to parent the 2nd and 3rd card
+    the comma means I want it to apply to both, and i want them to take up 48% of the available row
+    */
+    
+    .card:nth-child(2),
+    .card:nth-child(3) {
+        flex-basis: 48%;
+    }
+
+}
